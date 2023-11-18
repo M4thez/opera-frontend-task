@@ -34,3 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Resources
+
+Audio:
+
+- https://www.free-stock-music.com/alexander-nakarada-village-ambiance.html
+  Village Ambiance by Alexander Nakarada (CreatorChords) | https://creatorchords.com
+  Music promoted by https://www.free-stock-music.com
+  Creative Commons / Attribution 4.0 International (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+
+- https://www.free-stock-music.com/darren-curtis-witch-by-the-sea.html
+
+- https://www.free-stock-music.com/arthur-vyncke-red-forest.html
+
+- https://www.free-stock-music.com/alexander-nakarada-suspensify.html
+
+- https://www.free-stock-music.com/alexander-nakarada-main-theme-overture-the-grand-score.html
+
+Images:
+In-game screenshots made by me, Mateusz Boboryko.
