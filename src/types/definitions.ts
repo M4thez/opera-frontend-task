@@ -1,6 +1,7 @@
 export interface ISlide {
   id: number;
-  text: string;
-  imageURL: string;
+  imageURLs: string[];
   audioURL: string;
+  title: string;
+  subtitle?: string;
 }
