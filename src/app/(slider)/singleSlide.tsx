@@ -1,19 +1,16 @@
 import { ISlide } from "@/types/definitions";
+import styles from "./singleSlide.module.css";
 
 export function SingleSlide(props: ISlide) {
   return (
-    <div>
-      {props.title}
-      {props.imageURLs?.length > 0 && (
-        <picture>
-          <source srcSet={props.imageURLs[0]} type="image/webp" />
-          <img
-            src={props.imageURLs[1]}
-            alt="A description of the image."
-            width="400"
-          ></img>
-        </picture>
-      )}
+    <div className={styles.slide}>
+      <picture>
+        <source srcSet={props.imageURL} />
+        <img src={props.imageFallbackURL} alt={props.imageAltText}></img>
+      </picture>
+      <audio src={props.audioURL} controls />
+      <b>{props.title}</b>
+      <p>{props.subtitle}</p>
     </div>
   );
 }

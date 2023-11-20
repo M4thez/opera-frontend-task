@@ -29,13 +29,14 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <p>Hello World!</p>
+      <h1>Image Slider</h1>
       <SingleSlide
-        imageURLs={slidesData[activeIndex]?.imageURLs}
+        imageURL={slidesData[activeIndex]?.imageURL}
         audioURL={slidesData[activeIndex]?.audioURL}
+        imageFallbackURL={slidesData[activeIndex]?.imageFallbackURL}
+        imageAltText={slidesData[activeIndex]?.imageAltText}
         title={slidesData[activeIndex]?.title}
         subtitle={slidesData[activeIndex]?.subtitle}
-        id={slidesData[activeIndex]?.id}
       />
       <button onClick={nextSlide}>NEXT</button>
       <button onClick={previousSlide}>PREV</button>

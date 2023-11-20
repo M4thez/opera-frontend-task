@@ -1,0 +1,10 @@
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide img {
+  max-width: 100%;
+  height: auto;
+}
