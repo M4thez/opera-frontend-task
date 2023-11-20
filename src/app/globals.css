@@ -1,5 +1,11 @@
 :root {
 }
 body {
-  background-color: #333;
+  background: hsla(10, 43%, 8%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(10, 43%, 8%, 1) 0%,
+    hsla(0, 78%, 13%, 1) 100%
+  );
 }

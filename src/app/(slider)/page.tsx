@@ -27,9 +27,21 @@ export default function Home() {
     }
   }
 
+  // const slides = slidesData.map((slide) => (
+  //   <SingleSlide
+  //     key={slide.id}
+  //     id={slide.id}
+  //     imageURL={slide.imageURL}
+  //     audioURL={slide.audioURL}
+  //     imageFallbackURL={slide.imageFallbackURL}
+  //     imageAltText={slide.imageAltText}
+  //     title={slide.title}
+  //     subtitle={slide.subtitle}
+  //   />
+  // ));
+
   return (
     <main className={styles.main}>
-      <h1>Image Slider</h1>
       <SingleSlide
         imageURL={slidesData[activeIndex]?.imageURL}
         audioURL={slidesData[activeIndex]?.audioURL}
@@ -38,8 +50,11 @@ export default function Home() {
         title={slidesData[activeIndex]?.title}
         subtitle={slidesData[activeIndex]?.subtitle}
       />
-      <button onClick={nextSlide}>NEXT</button>
-      <button onClick={previousSlide}>PREV</button>
+      {/* {slides} */}
+      <div className={styles["slider-buttons"]}>
+        <button onClick={previousSlide}>&lsaquo;</button>
+        <button onClick={nextSlide}>&rsaquo;</button>
+      </div>
     </main>
   );
 }

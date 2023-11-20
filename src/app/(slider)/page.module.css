@@ -2,6 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 2rem;
-  min-height: 90vh;
+  min-height: 91vh;
+}
+
+.slider-buttons {
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.slider-buttons button {
+  border-radius: 50%;
+  border: 1px solid #555;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.slider-buttons button:hover {
+  background-color: #b5e4ea;
 }

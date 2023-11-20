@@ -6,11 +6,14 @@ export function SingleSlide(props: ISlide) {
     <div className={styles.slide}>
       <picture>
         <source srcSet={props.imageURL} />
-        <img src={props.imageFallbackURL} alt={props.imageAltText}></img>
+        <img src={props.imageFallbackURL} alt={props.imageAltText} />
       </picture>
-      <audio src={props.audioURL} controls />
-      <b>{props.title}</b>
-      <p>{props.subtitle}</p>
+      <div className={styles.shadow}></div>
+      <audio src={props.audioURL} autoPlay />
+      <div className={styles.text}>
+        <b>{props.title}</b>
+        <p>{props.subtitle}</p>
+      </div>
     </div>
   );
 }

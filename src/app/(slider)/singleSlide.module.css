@@ -1,4 +1,5 @@
 .slide {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,4 +8,31 @@
 .slide img {
   max-width: 100%;
   height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px -140px 32px 0px rgba(0, 0, 0, 0.5);
+
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+}
+.text {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.6);
+}
+.text b {
+  font-size: 2.4rem;
+}
+.text p {
+  font-size: 1.4rem;
 }
