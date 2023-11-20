@@ -15,42 +15,41 @@ export default function Home() {
       .then((data) => setSlidesData(data.slidesData));
   }, []);
 
+  // Carousel behaviour, images slider loops around, fun never stops
   function nextSlide() {
     if (activeIndex < slidesData.length - 1) {
       setActiveIndex(activeIndex + 1);
+    } else if (activeIndex === slidesData.length - 1) {
+      setActiveIndex(0);
     }
   }
 
   function previousSlide() {
     if (activeIndex > 0) {
       setActiveIndex(activeIndex - 1);
+    } else if (activeIndex === 0) {
+      setActiveIndex(slidesData.length - 1);
     }
   }
 
-  // const slides = slidesData.map((slide) => (
-  //   <SingleSlide
-  //     key={slide.id}
-  //     id={slide.id}
-  //     imageURL={slide.imageURL}
-  //     audioURL={slide.audioURL}
-  //     imageFallbackURL={slide.imageFallbackURL}
-  //     imageAltText={slide.imageAltText}
-  //     title={slide.title}
-  //     subtitle={slide.subtitle}
-  //   />
-  // ));
+  const slides = slidesData.map((slide, index) => (
+    <SingleSlide
+      key={slide.id}
+      id={slide.id}
+      imageURL={slide.imageURL}
+      audioURL={slide.audioURL}
+      imageFallbackURL={slide.imageFallbackURL}
+      imageAltText={slide.imageAltText}
+      title={slide.title}
+      subtitle={slide.subtitle}
+      activeIndex={activeIndex}
+      objectIndex={index}
+    />
+  ));
 
   return (
     <main className={styles.main}>
-      <SingleSlide
-        imageURL={slidesData[activeIndex]?.imageURL}
-        audioURL={slidesData[activeIndex]?.audioURL}
-        imageFallbackURL={slidesData[activeIndex]?.imageFallbackURL}
-        imageAltText={slidesData[activeIndex]?.imageAltText}
-        title={slidesData[activeIndex]?.title}
-        subtitle={slidesData[activeIndex]?.subtitle}
-      />
-      {/* {slides} */}
+      <div className={styles["slider"]}>{slides}</div>
       <div className={styles["slider-buttons"]}>
         <button onClick={previousSlide}>&lsaquo;</button>
         <button onClick={nextSlide}>&rsaquo;</button>

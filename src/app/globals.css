@@ -1,11 +1,7 @@
 :root {
 }
 body {
-  background: hsla(10, 43%, 8%, 1);
+  background: rgb(7, 5, 5);
 
-  background: linear-gradient(
-    90deg,
-    hsla(10, 43%, 8%, 1) 0%,
-    hsla(0, 78%, 13%, 1) 100%
-  );
+  background: linear-gradient(90deg, rgb(7, 5, 5) 0%, rgb(4, 24, 42) 100%);
 }
