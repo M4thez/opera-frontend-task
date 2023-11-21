@@ -18,10 +18,14 @@ export function SingleSlide(props: any) {
     >
       <picture>
         <source srcSet={props.imageURL} />
-        <img src={props.imageFallbackURL} alt={props.imageAltText} />
+        <img
+          src={props.imageFallbackURL}
+          alt={props.imageAltText}
+          loading="eager"
+        />
       </picture>
       <div className={styles.shadow}></div>
-      {isActive && <audio src={props.audioURL} autoPlay />}
+      {isActive && <audio src={props.audioURL} />}
 
       <div className={styles.text}>
         <b>{props.title}</b>
