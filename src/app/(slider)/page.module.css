@@ -17,14 +17,18 @@
 
 .slider-buttons button {
   border-radius: 50%;
-  border: 1px solid #555;
-  width: 50px;
-  height: 50px;
-  font-size: 22px;
+  background-color: #ddd;
+  border: none;
+  width: 56px;
+  height: 56px;
+  font-size: 26px;
   cursor: pointer;
-  transition: 0.4s;
+  transition: background-color 0.4s;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
 .slider-buttons button:hover {
   background-color: #b5e4ea;
+}
+.slider-buttons button:active {
+  background-color: #8eb1b6;
 }
