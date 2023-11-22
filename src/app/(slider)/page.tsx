@@ -5,6 +5,14 @@ import { useState, useEffect } from "react";
 import { SingleSlide } from "./singleSlide";
 import { ISlide } from "@/types/definitions";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faVolumeXmark,
+  faVolumeHigh,
+  faCaretRight,
+  faCaretLeft,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function Home() {
   const [slidesData, setSlidesData] = useState<ISlide[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -36,7 +44,6 @@ export default function Home() {
   const slides = slidesData.map((slide, index) => (
     <SingleSlide
       key={slide.id}
-      id={slide.id}
       imageURL={slide.imageURL}
       audioURL={slide.audioURL}
       imageFallbackURL={slide.imageFallbackURL}
@@ -51,11 +58,23 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <button onClick={() => setAudioMuted(!isAudioMuted)}>Mute</button>
+      <div className={styles["audio-button"]}>
+        <button onClick={() => setAudioMuted(!isAudioMuted)}>
+          {isAudioMuted ? (
+            <FontAwesomeIcon icon={faVolumeXmark} />
+          ) : (
+            <FontAwesomeIcon icon={faVolumeHigh} />
+          )}
+        </button>
+      </div>
       <div className={styles["slider"]}>{slides}</div>
       <div className={styles["slider-buttons"]}>
-        <button onClick={previousSlide}>&lsaquo;</button>
-        <button onClick={nextSlide}>&rsaquo;</button>
+        <button onClick={previousSlide}>
+          <FontAwesomeIcon icon={faCaretLeft} />
+        </button>
+        <button onClick={nextSlide}>
+          <FontAwesomeIcon icon={faCaretRight} />
+        </button>
       </div>
     </main>
   );

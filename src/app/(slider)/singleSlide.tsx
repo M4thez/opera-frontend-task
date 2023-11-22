@@ -41,7 +41,6 @@ export function SingleSlide(props: any) {
           autoPlay={props.isAudioMuted ? false : true}
         />
       )}
-
       <div className={styles.text}>
         <b>{props.title}</b>
         <p>{props.subtitle}</p>

@@ -19,7 +19,7 @@
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
-  max-height: 90vh;
+  max-height: 80vh;
 }
 
 .shadow {
@@ -68,6 +68,12 @@
 }
 @media screen and (max-width: 720px) {
   .slide img {
-    aspect-ratio: 5/14;
+    aspect-ratio: 5/8;
+  }
+  .text b {
+    font-size: 1.2rem;
+  }
+  .text p {
+    font-size: 1rem;
   }
 }
