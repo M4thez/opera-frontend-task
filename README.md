@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Overview
+
+React frontend intern task for Opera by Mateusz Boboryko.
+
+A [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+Next.js is a React framework for building full-stack web applications. Under the hood, Next.js abstracts and automatically configures tooling needed for React, like bundling, compiling, and more. This allowed me to focus on building my application instead of spending time with configuration.
+
+Main frontend code is located in /src/app/(slider)
+
+Backend part in the form of a simple API endpoint is located in /src/app/api/slides
 
 ## How to run
 
@@ -35,10 +45,6 @@ npm run dev
 Audio:
 
 - https://www.free-stock-music.com/alexander-nakarada-village-ambiance.html
-  Village Ambiance by Alexander Nakarada (CreatorChords) | https://creatorchords.com
-  Music promoted by https://www.free-stock-music.com
-  Creative Commons / Attribution 4.0 International (CC BY 4.0)
-  https://creativecommons.org/licenses/by/4.0/
 
 - https://www.free-stock-music.com/darren-curtis-witch-by-the-sea.html
 
