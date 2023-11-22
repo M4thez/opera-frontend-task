@@ -77,3 +77,16 @@
     font-size: 1rem;
   }
 }
+
+@media screen and (max-height: 768px) and (orientation: landscape) {
+  .slide img {
+    max-height: 60vh;
+    aspect-ratio: 20/9;
+  }
+  .text b {
+    font-size: 1.2rem;
+  }
+  .text p {
+    font-size: 1rem;
+  }
+}
