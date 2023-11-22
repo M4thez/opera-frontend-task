@@ -20,8 +20,19 @@ export default function Home() {
 
   useEffect(() => {
     fetch("/api/slides")
-      .then((res) => res.json())
-      .then((data) => setSlidesData(data.slidesData));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Slides API status " + response.status);
+        }
+        return response.json();
+      })
+      .then((data) => setSlidesData(data.slidesData))
+      .catch((error) => {
+        console.error(
+          "There was an error during slides fetch operation",
+          error
+        );
+      });
   }, []);
 
   // Carousel behaviour, slider loops around
@@ -59,7 +70,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles["audio-button"]}>
-        <button onClick={() => setAudioMuted(!isAudioMuted)}>
+        <button
+          type="button"
+          title="Toggle music on/off"
+          onClick={() => setAudioMuted(!isAudioMuted)}
+        >
           {isAudioMuted ? (
             <FontAwesomeIcon icon={faVolumeXmark} />
           ) : (
@@ -69,10 +84,14 @@ export default function Home() {
       </div>
       <div className={styles["slider"]}>{slides}</div>
       <div className={styles["slider-buttons"]}>
-        <button onClick={previousSlide}>
+        <button
+          type="button"
+          title="Go to the previous slide"
+          onClick={previousSlide}
+        >
           <FontAwesomeIcon icon={faCaretLeft} />
         </button>
-        <button onClick={nextSlide}>
+        <button type="button" title="Go to the next slide" onClick={nextSlide}>
           <FontAwesomeIcon icon={faCaretRight} />
         </button>
       </div>
