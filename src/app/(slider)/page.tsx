@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 import { SingleSlide } from "./singleSlide";
-import { ISlide } from "@/types/definitions";
+import { ISlide, LoadingStates } from "@/types/definitions";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,11 +12,13 @@ import {
   faCaretRight,
   faCaretLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import ErrorPage from "@/app/_general/errorPage";
 
-export default function Home() {
+export default function SliderPage() {
   const [slidesData, setSlidesData] = useState<ISlide[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isAudioMuted, setAudioMuted] = useState<boolean>(false);
+  const [loadingState, setLoadingState] = useState<LoadingStates>("loading");
 
   useEffect(() => {
     fetch("/api/slides")
@@ -26,8 +28,12 @@ export default function Home() {
         }
         return response.json();
       })
-      .then((data) => setSlidesData(data.slidesData))
+      .then((data) => {
+        setSlidesData(data.slidesData);
+        setLoadingState("complete");
+      })
       .catch((error) => {
+        setLoadingState("error");
         console.error(
           "There was an error during slides fetch operation",
           error
@@ -67,34 +73,42 @@ export default function Home() {
     />
   ));
 
-  return (
-    <main className={styles.main}>
-      <div className={styles["audio-button"]}>
-        <button
-          type="button"
-          title="Toggle music on/off"
-          onClick={() => setAudioMuted(!isAudioMuted)}
-        >
-          {isAudioMuted ? (
-            <FontAwesomeIcon icon={faVolumeXmark} />
-          ) : (
-            <FontAwesomeIcon icon={faVolumeHigh} />
-          )}
-        </button>
-      </div>
-      <div className={styles["slider"]}>{slides}</div>
-      <div className={styles["slider-buttons"]}>
-        <button
-          type="button"
-          title="Go to the previous slide"
-          onClick={previousSlide}
-        >
-          <FontAwesomeIcon icon={faCaretLeft} />
-        </button>
-        <button type="button" title="Go to the next slide" onClick={nextSlide}>
-          <FontAwesomeIcon icon={faCaretRight} />
-        </button>
-      </div>
-    </main>
-  );
+  if (loadingState === "error") {
+    return <ErrorPage message="Slides API not available." />;
+  } else {
+    return (
+      <main className={styles.main}>
+        <div className={styles["audio-button"]}>
+          <button
+            type="button"
+            title="Toggle music on/off"
+            onClick={() => setAudioMuted(!isAudioMuted)}
+          >
+            {isAudioMuted ? (
+              <FontAwesomeIcon icon={faVolumeXmark} />
+            ) : (
+              <FontAwesomeIcon icon={faVolumeHigh} />
+            )}
+          </button>
+        </div>
+        <div className={styles["slider"]}>{slides}</div>
+        <div className={styles["slider-buttons"]}>
+          <button
+            type="button"
+            title="Go to the previous slide"
+            onClick={previousSlide}
+          >
+            <FontAwesomeIcon icon={faCaretLeft} />
+          </button>
+          <button
+            type="button"
+            title="Go to the next slide"
+            onClick={nextSlide}
+          >
+            <FontAwesomeIcon icon={faCaretRight} />
+          </button>
+        </div>
+      </main>
+    );
+  }
 }

@@ -7,3 +7,5 @@ export interface ISlide {
   title: string;
   subtitle?: string;
 }
+
+export type LoadingStates = "loading" | "complete" | "error";
