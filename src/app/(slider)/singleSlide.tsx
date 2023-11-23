@@ -11,7 +11,7 @@ export function SingleSlide(props: any) {
     } else {
       setActive(true);
     }
-  }, [props.activeIndex]);
+  }, [props.activeIndex, props.objectIndex]);
 
   useEffect(() => {
     if (props.isAudioMuted) {
