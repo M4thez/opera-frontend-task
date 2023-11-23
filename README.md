@@ -1,16 +1,19 @@
 # Overview
 
-React frontend intern task for Opera by Mateusz Boboryko.
+Author: Mateusz Boboryko
 
-A [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+React frontend intern task for Opera.
 
-Next.js is a React framework for building full-stack web applications. Under the hood, Next.js abstracts and automatically configures tooling needed for React, like bundling, compiling, and more. This allowed me to focus on building my application instead of spending time with configuration.
+A [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Next.js is a React framework for building full-stack web applications. Under the hood, Next.js abstracts and automatically configures tooling needed for React, like bundling, compiling, and more. This allowed me to focus on building my application instead of spending time with configuration.
 
 Main frontend code is located in /src/app/(slider)
 
 Backend part in the form of a simple API endpoint is located in /src/app/api/slides
 
 ## How to run
+
+Preferably be on the Node.js v18.17 or later.
+Make sure you are in the root directory of the project.
 
 Single command to install node packages and run the application:
 
@@ -55,4 +58,4 @@ Audio:
 - https://www.free-stock-music.com/alexander-nakarada-main-theme-overture-the-grand-score.html
 
 Images:
-In-game screenshots made by me, Mateusz Boboryko.
+In-game screenshots made by me.
