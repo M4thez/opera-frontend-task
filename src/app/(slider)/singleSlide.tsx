@@ -30,7 +30,7 @@ export function SingleSlide(props: any) {
         <img
           src={props.imageFallbackURL}
           alt={props.imageAltText}
-          loading="eager"
+          loading={isActive ? "eager" : "lazy"}
         />
       </picture>
       <div className={styles.shadow}></div>
